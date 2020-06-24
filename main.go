@@ -85,9 +85,6 @@ func MP4ToHLS(root, file string) error {
 		M3u8Name,
 	)
 	cmd.Dir = root
-	if err := cmd.Run(); err != nil {
-		return err
-	}
-
-	return nil
+	
+	return cmd.Run()
 }
