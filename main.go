@@ -60,7 +60,7 @@ func MP4ToHLS(root, file string) error {
 		return err
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 
 	cmd := exec.CommandContext(
@@ -85,6 +85,6 @@ func MP4ToHLS(root, file string) error {
 		M3u8Name,
 	)
 	cmd.Dir = root
-	
+
 	return cmd.Run()
 }
